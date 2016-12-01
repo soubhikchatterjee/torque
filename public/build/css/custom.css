@@ -4129,36 +4129,3 @@ ul.notifications {
   border: 1px solid #e5e5e5; }
 
 /** /Dropzone.js **/
-
-.float-right {
-  float: right;
-}
-
-.center {
-  text-align: center;
-}
-
-.width100 {
-  width: 100px;
-}
-
-.line-height35{
-  line-height: 35px;
-}
-
-.margin-left15{
-  margin-left: 15px;
-}
-
-.margin-bottom45 {
-  margin-bottom: 45px;
-}
-
-.margin-top40 {
-  margin-top: 40px;
-}
-
-#torque-logo {
-  background: url(../../images/torque_logo.png);
-  border: 1px solid red;
-}

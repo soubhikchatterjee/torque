@@ -229,26 +229,3 @@ function countChecked() {
 $(function() {
     $('#search_input').fastLiveFilter('#search_list');
 });
-
-$('#sel_data_type').change(function(){
-
-    $type = $(this).val();
-
-    $('#txt_hash_key, #txt_score').val('').removeAttr('required');
-    $('#dv_hash_key, #dv_score').addClass('hidden');
-
-    switch($type) {
-        case 'hash':
-        $('#dv_hash_key').removeClass('hidden');
-        $('#txt_hash_key').val('').attr('required', 'required');
-    break;
-        case 'list':
-        $('#dv_index').removeClass('hidden');
-    break;
-        case 'zset':
-        $('#dv_score').removeClass('hidden');
-        $('#txt_score').val('').attr('required', 'required');
-    break;
-    }
-
-});

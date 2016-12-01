@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App;
 use View;
 use Cookie;
 
@@ -26,6 +27,15 @@ class BaseController extends Controller
     	}
 
    		$this->keys = $this->Redis->keys('*');
+
+   		// Get the locale from the session (if any)
+   		$locale = session()->get('locale');
+		if (!$locale) {
+			$locale = 'en';
+		}
+
+		// Set the locale of the application
+		App::setLocale($locale);	
 
     	View::share('keys', $this->keys);
 	}

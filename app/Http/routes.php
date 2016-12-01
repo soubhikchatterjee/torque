@@ -13,6 +13,7 @@
 
 Route::get('/', 'ConnectionController@Index');
 Route::post('/connect', 'ConnectionController@SubmitConnect');
+Route::post('/setLocale', 'ConnectionController@SetLocale');
 
 Route::get('/home', 'RedisController@Index')->name('home');
 Route::get('/add', 'RedisController@Add');

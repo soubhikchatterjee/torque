@@ -21,6 +21,11 @@
 
     <!-- Custom Theme Style -->
     <link href="../build/css/custom.min.css" rel="stylesheet">
+    <link href="../custom/css/developer.css" rel="stylesheet">
+    
+    <!-- jQuery -->
+    <script src="../vendors/jquery/dist/jquery.min.js"></script>
+    <script type="text/javascript" src="../custom/js/developer.js"></script>
   </head>
 
   <body class="login">

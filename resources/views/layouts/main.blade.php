@@ -28,6 +28,7 @@
 
     <!-- Custom Theme Style -->
     <link href="{{ asset($public . 'build/css/custom.css') }}" rel="stylesheet">
+    <link href="{{ asset($public . 'custom/css/developer.css') }}" rel="stylesheet">
   </head>
 
   <body class="nav-md">
@@ -151,6 +152,7 @@
 
     <!-- Custom Theme Scripts -->
     <script src="{{ asset($public . 'build/js/custom.js') }}"></script>
+    <script src="{{ asset($public . 'custom/js/developer.js') }}"></script>
 
     <!-- Datatables -->
     <script>
