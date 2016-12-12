@@ -125,7 +125,7 @@ sudo /etc/init.d/dns-clean start
 ```
 
 
-### Step 13. Reloading & Restart Apache
+### Step 13. Reload & Restart Apache
 ```
 > sudo service apache2 reload
 > service apache2 restart
