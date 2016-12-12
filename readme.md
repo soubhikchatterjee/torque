@@ -11,6 +11,7 @@ Before running Torque, please make sure you have the following enabled/installed
 * Redis
 * Apache 2.x
 * Composer
+* Git CLI
 * PHP v 5.6 or above with the following extensions:
 	* mbstring
 	* php-xml
@@ -22,7 +23,7 @@ Before running Torque, please make sure you have the following enabled/installed
 This will download the latest version of Torque under the directory */var/www/html/torque.app*
 ```
 > cd /var/www/html
-> git clone git@github.com:soubhikchatterjee/torque.git torque.app
+> git clone https://github.com/soubhikchatterjee/torque.git torque.app
 ```
 
 
@@ -63,12 +64,13 @@ This will download the required packages for Torque.
 
 ### Step 7. Add a virtual host
 ```
-> sudo cp /etc/apache2/sites-available/000-default.conf /etc/apache2/sites-available/torque.conf
+> cd /etc/apache2/sites-available
+> sudo cp 000-default.conf torque.conf
 ```
 
 ### Step 8. Edit the torque.conf file 
 ```
-> sudo vi /etc/apache2/sites-available/torque.conf
+> sudo vi torque.conf
 ```
 
 and replace the current content with the following:
@@ -91,7 +93,7 @@ and replace the current content with the following:
 
 ### Step 9. Enable the new virtual host
 ```
-> sudo a2ensite /etc/apache2/sites-available/torque.conf
+> sudo a2ensite torque.conf
 
 ```
 
@@ -119,7 +121,7 @@ sudo /etc/init.d/dns-clean start
 
 ### Step 12. Make sure mod_rewrite is enabled
 ```
-> sa2enmod rewrite
+> sudo a2enmod rewrite
 ```
 
 
