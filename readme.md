@@ -30,7 +30,7 @@ This will download the latest version of Torque under the directory */var/www/ht
 ### Step 2. Run composer update
 This will download the required packages for Torque.
  ```
- > cd /var/www/html/torque.app
+ > cd torque.app
  > composer update
  ```
 
