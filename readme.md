@@ -11,7 +11,7 @@ Before running Torque, please make sure you have the following enabled/installed
 * Redis
 * Apache 2.x
 * Composer
-* Git CLI
+* Git cli
 * PHP v 5.6 or above with the following extensions:
 	* mbstring
 	* php-xml
