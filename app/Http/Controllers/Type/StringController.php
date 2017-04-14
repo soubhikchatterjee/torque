@@ -23,9 +23,8 @@ class StringController extends BaseController
      */
     public function View($key)
     {
-        die;
     	try {
-            $data = $this->Redis->get($key);
+        $data = $this->Redis->get($key);
     	} catch (\Exception $Exception) {
     		$msgKey = 'error';
 			$msgDescription =  trans('type/string.view_description_error', ['error' => $Exception->getMessage()]);
@@ -50,7 +49,7 @@ class StringController extends BaseController
     public function EditIndex($key)
     {
     	try {
-    		$data = $this->Redis->get($key);   		
+    		$data = $this->Redis->get($key);
     	} catch (\Exception $Exception) {
     		$msgKey = 'error';
 			$msgDescription =  trans('type/string.view_description_error', ['error' => $Exception->getMessage()]);
@@ -79,7 +78,7 @@ class StringController extends BaseController
     		$this->Redis->set($key, $Request->input('txt_value'));
 			$msgKey = 'success';
 			$msgDescription =  trans('type/string.edit_description_success');
-    		
+
     	} catch (\Exception $Exception) {
     		$msgKey = 'error';
 			$msgDescription =  trans('type/string.edit_description_error', ['error' => $Exception->getMessage()]);
@@ -105,7 +104,7 @@ class StringController extends BaseController
 
 			$msgKey = 'success';
 			$msgDescription =  trans('type/string.delete_description_success');
-    		
+
     	} catch (\Exception $Exception) {
     		$msgKey = 'error';
 			$msgDescription =  trans('type/string.delete_description_error', ['error' => $Exception->getMessage()]);
@@ -113,7 +112,7 @@ class StringController extends BaseController
 
 		Session::flash($msgKey, $msgDescription);
 
-		return Redirect::back();	
+		return Redirect::back();
     }
 }
 

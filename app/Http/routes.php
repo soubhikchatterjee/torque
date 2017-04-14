@@ -19,10 +19,11 @@ Route::get('/home', 'RedisController@Index')->name('home');
 Route::get('/add', 'RedisController@Add');
 Route::get('/info', 'RedisController@Info');
 Route::get('/disconnect', 'RedisController@Disconnect');
-Route::get('/view/{key}', 'RedisController@View');
 Route::post('/addSubmit', 'RedisController@AddSubmit');
 Route::put('/editSubmit', 'RedisController@EditSubmit');
 Route::delete('/delete', 'RedisController@Delete');
+Route::get('/view/{key}', 'RedisController@View');
+
 
 // Process String
 Route::get('/string/view/{key}', 'Type\StringController@View');

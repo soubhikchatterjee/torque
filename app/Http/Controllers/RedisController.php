@@ -29,7 +29,7 @@ class RedisController extends BaseController
      */
     public function Index()
     {
-    	$keys = $this->keys;	
+    	$keys = $this->keys;
         $data = $this->Redis->config('GET', '*');
 
         $config = $this->ConvertStructure($data);
@@ -49,7 +49,7 @@ class RedisController extends BaseController
     {
     	$this->layout = null;
     	$type = $this->Redis->type($key);
-        $ttl = $this->Redis->ttl($key);
+      $ttl = $this->Redis->ttl($key);
 
         View::share('ttl', $ttl);
         View::share('key_name', $key);
@@ -67,23 +67,23 @@ class RedisController extends BaseController
     		case self::TYPE_LIST:
     			$data = $this->Redis->lrange($key, '0', '-1');
     			return view('list', compact('data'));
-    			break;    
+    			break;
 
-                
+
             case self::TYPE_HASH:
                 $data = $this->Redis->hgetall($key);
                 return view('hash', ['data' => $this->ConvertStructure($data)]);
-                break;                              			
+                break;
 
-                
+
             case self::TYPE_SET:
                 $data = $this->Redis->smembers($key);
                 return view('set', compact('data'));
                 break;
 
-                
+
             case self::TYPE_ZSET:
-                $data = $this->Redis->zrange($key, '0', '-1', 'WITHSCORES');    
+                $data = $this->Redis->zrange($key, '0', '-1', 'WITHSCORES');
                 return view('zset', ['data' => $this->ConvertStructure($data)]);
                 break;
 
@@ -112,11 +112,11 @@ class RedisController extends BaseController
      */
     public function Info()
     {
-        //$keys = $this->keys;    
+        //$keys = $this->keys;
         $data = $this->Redis->info();
 
         return view('info', compact('data'));
-    }    
+    }
 
      /**
      * When a key is added, this subroutine is called
@@ -187,11 +187,11 @@ class RedisController extends BaseController
                 // Save the key
                 $this->Redis->zadd($key, $score, $value);
                 $this->SetExpiry($key, $expiry);
-                break;                
+                break;
         }
 
         Session::flash('success', trans('main.add_key_success'));
-        return redirect('/view/' . $key);    
+        return redirect('/view/' . $key);
     }
 
      /**
@@ -241,7 +241,7 @@ class RedisController extends BaseController
                 // If not, then we set the expiry time to what was specified
                 $this->Redis->expire($key, $expiry);
             }
-          
+
         } catch (\Exception $Exception) {
             Session::flash('error', $Exception->getMessage());
             return redirect('/home');
@@ -265,7 +265,7 @@ class RedisController extends BaseController
 
             $msgKey = 'success';
             $msgDescription =  trans('main.delete_key_success');
-            
+
         } catch (\Exception $Exception) {
             $msgKey = 'error';
             $msgDescription =  trans('main.delete_key_error', ['error' => $Exception->getMessage()]);
