@@ -1,10 +1,10 @@
 # Torque
-Redis administration for humans.
+Redis administration for humans. (www.TorqueApp.org)
 
 
 # Installation Guide
 
-## Prerequisites 
+## Prerequisites
 
 Before running Torque, please make sure you have the following enabled/installed on your machine:
 
@@ -68,7 +68,7 @@ This will download the required packages for Torque.
 > sudo cp 000-default.conf torque.conf
 ```
 
-### Step 8. Edit the torque.conf file 
+### Step 8. Edit the torque.conf file
 ```
 > sudo vi torque.conf
 ```
