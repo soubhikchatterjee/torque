@@ -33,7 +33,7 @@
 					{{ trans('main.name')}}
 				</h1>
 				<div class="weblink">
-					<a href="http://torquelab.org" target="_blank">www.torquelab.org</a>
+					<a href="http://torqueapp.org" target="_blank">www.torqueapp.org</a>
 				</div>
 
 				<p>{!! trans('main.maintained_by') !!}</p>

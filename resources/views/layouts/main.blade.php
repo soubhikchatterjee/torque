@@ -68,7 +68,7 @@
                     <ul class="nav child_menu" id="search_list" style="display: block;">
                     @if (isset($keys))
                       @foreach ($keys as $key)
-                      <li><a href="/view/{{ $key }}" title="{{ $key }}">{{ str_limit($key, 60) }}</a></li>
+                      <li><a href="/view/{{ $key }}" title="{{ $key }}">{{ str_limit($key, 20) }}</a></li>
                       @endforeach  
                     @endif
                     </ul>
